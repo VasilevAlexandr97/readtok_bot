@@ -1,0 +1,32 @@
+[project]
+name = "readtok"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiogram>=3.26.0",
+    "alembic>=1.18.4",
+    "asyncpg>=0.31.0",
+    "dishka>=1.9.1",
+    "lxml>=6.0.2",
+    "openai>=2.30.0",
+    "pick>=2.6.0",
+    "psycopg2-binary>=2.9.11",
+    "sqlalchemy>=2.0.48",
+    "transliterate>=1.10.2",
+    "types-lxml>=2026.2.16",
+    "uuid6>=2025.0.1",
+]
+
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = ["ruff>=0.15.6", "ty>=0.0.26"]
+
+
+[project.scripts]
+cli = "readtok.entrypoint.cli:run_cli"

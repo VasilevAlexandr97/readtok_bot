@@ -1,0 +1,9 @@
+# [[overrides]]
+# include = [
+#     "src",
+#     "tests",
+# ]
+
+[src]
+include = ["src/**", "tests/**"]
+exclude = ["**/__pycache__", ".pytest_cache", ".ruff_cache", ".venv"]

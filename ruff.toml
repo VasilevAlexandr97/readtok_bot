@@ -1,0 +1,90 @@
+line-length = 79
+target-version = "py313"
+src = ["src"]
+
+include = ["src/**", "tests/**"]
+
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "dist",
+    "node_modules",
+    "venv",
+    ".helm",
+]
+
+
+lint.select = ["ALL"]
+
+
+lint.ignore = [
+    "ANN",    # flake8-annotations
+    "D",      # pydocstyle (D)
+    "B904",   # raise-without-from-inside-except
+    "ERA001", # commented-out-code
+    "RUF003", # raise-without-from-inside-except
+    "EM101",  # raw-string-in-exception
+    "EM102",  # f-string-in-exception
+    "SIM108", # if-else-block-instead-of-if-exp
+    "TRY003", # raise-vanilla-args
+    "TRY300", # raise-without-from-inside-except
+    "TCH003", # typing-only-standard-library-import
+    "E731",   # do-not-use-lambda
+    "BLE001", # do-not-catch-blind-exception
+    "G004",   # logging-f-string
+    "TRY301", # use-exception-inner-function
+    "FBT001", # boolean-positional-arg-in-function-definition
+    "FBT002", # boolean-keyword-arg-in-function-definition
+    "RUF002",
+
+    "TD002",
+    "TD003",
+
+    "FIX002",
+
+    "TC001",
+    "TC002",
+    "TC003",
+    "TC006",
+
+    "UP038",
+
+    "S101",
+    "S311",
+    "PLR0913",
+    "RUF001",
+    "RET504",
+]
+
+
+[lint.isort]
+force-wrap-aliases = true
+force-single-line = false
+combine-as-imports = true
+lines-between-types = 1
+
+
+[lint.pydocstyle]
+# Use Google-style docstrings.
+convention = "google"
+
+
+[format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
