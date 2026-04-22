@@ -1,15 +1,16 @@
 import logging
 
 from datetime import UTC, datetime
+from uuid import UUID
 
 from uuid6 import uuid7
 
-from spytrend.auth.exceptions import AuthError
-from spytrend.auth.id_provider import IdProvider
-from spytrend.infra.db.transaction_manager import TransactionManager
-from spytrend.users.exceptions import CreateUserError, UserAlreadyExistsError
-from spytrend.users.gateways import UserGateway
-from spytrend.users.models import User
+from readtok.auth.exceptions import AuthError
+from readtok.auth.id_provider import IdProvider
+from readtok.infra.db.transaction_manager import TransactionManager
+from readtok.users.exceptions import CreateUserError, UserAlreadyExistsError
+from readtok.users.gateways import UserGateway
+from readtok.users.models import User
 
 logger = logging.getLogger(__name__)
 
@@ -25,7 +26,7 @@ class TelegramAuth:
         self.user_gateway = user_gateway
         self.transaction_manager = transaction_manager
 
-    async def auth(self):
+    async def auth(self) -> UUID:
         try:
             return await self.id_provider.get_current_user_id()
         except AuthError:
@@ -43,11 +44,11 @@ class TelegramAuth:
             await self.user_gateway.add(new_user)
             await self.transaction_manager.commit()
         except CreateUserError:
-            logger.info(f"User not created: {new_user!r}")
+            logger.info(f"User not created: {new_user}")
             await self.transaction_manager.rollback()
             raise
         except UserAlreadyExistsError:
-            logger.info(f"User already exists: {new_user!r}")
+            logger.info(f"User already exists: {new_user}")
             await self.transaction_manager.rollback()
             raise
         return user_id

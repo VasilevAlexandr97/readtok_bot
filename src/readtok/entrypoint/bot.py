@@ -5,9 +5,9 @@ from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.redis import RedisStorage
+from aiogram.types import LinkPreviewOptions
 from dishka import make_async_container
 from dishka.integrations.aiogram import AiogramProvider, setup_dishka
-from aiogram.types import LinkPreviewOptions
 from spytrend.config import Config, get_config
 from spytrend.di import (
     AnalyticsProvider,

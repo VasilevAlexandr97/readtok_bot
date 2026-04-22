@@ -6,9 +6,9 @@ from sqlalchemy import (
     BigInteger,
     DateTime,
 )
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column
 
-from spytrend.infra.db.base import Base
+from readtok.infra.db.base import Base
 
 
 class User(Base):
@@ -29,17 +29,10 @@ class User(Base):
         nullable=False,
     )
 
-    channels: Mapped[list["UserChannel"]] = relationship(
-        back_populates="user",
-        cascade="all, delete-orphan",
-    )
-
-    def __repr__(self) -> str:
+    def __str__(self) -> str:
         return (
-            "UserModel("
-            f"id={self.id}, "
+            f"UserModel(id={self.id},"
             f"telegram_id={self.telegram_id}, "
             f"created_at={self.created_at}, "
-            f"updated_at={self.updated_at}"
-            ")"
+            f"updated_at={self.updated_at})"
         )

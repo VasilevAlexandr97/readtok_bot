@@ -1,8 +1,6 @@
-import contextlib
 
 from uuid6 import uuid7
 
-from readtok.books.exceptions import BookCategoryAlreadyExistsError
 from readtok.books.gateways import BookCategoryGateway
 from readtok.books.models import BookCategory
 from readtok.infra.db.transaction_manager import TransactionManager

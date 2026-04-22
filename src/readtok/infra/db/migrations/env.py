@@ -6,6 +6,7 @@ from sqlalchemy import engine_from_config, pool
 from readtok.books.models import *  # noqa: F403
 from readtok.entrypoint.config import get_config
 from readtok.infra.db.base import Base
+from readtok.users.models import *  # noqa: F403
 
 project_config = get_config()
 

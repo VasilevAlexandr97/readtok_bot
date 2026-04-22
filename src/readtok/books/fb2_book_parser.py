@@ -194,7 +194,7 @@ class Fb2BookParser:
         """Собирает текст примечания из <p> и <poem>."""
         text = self.get_paragraphs_as_text(note_section)  # из <p>
         if not text:
-            text = self.get_poem_as_text(note_section)    # из <poem>
+            text = self.get_poem_as_text(note_section)  # из <poem>
         return text
 
     def get_notes(self, note_sections: etree.Element) -> list[NoteData]:

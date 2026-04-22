@@ -20,9 +20,9 @@ from readtok.books.fb2_book_parser import Fb2BookParser
 # from readtok.auth.telegram_auth import TelegramAuth
 from readtok.books.gateways import (
     BookCategoryGateway,
+    BookEpisodeGateway,
     BookGateway,
     BookNoteGateway,
-    BookEpisodeGateway,
 )
 from readtok.books.services import BookImportService, BookService
 from readtok.entrypoint.config import Config

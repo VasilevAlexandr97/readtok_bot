@@ -1,5 +1,6 @@
 import logging
 import re
+
 from uuid import UUID
 
 from aiogram import Bot, F, Router, types
@@ -8,7 +9,6 @@ from aiogram.exceptions import TelegramBadRequest
 from aiogram.filters import Command, CommandStart
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from dishka.integrations.aiogram import FromDishka, inject
-
 from spytrend.auth.telegram_auth import TelegramAuth
 from spytrend.channels.exceptions import UserChannelAlreadyExistsError
 from spytrend.channels.models import UserChannel

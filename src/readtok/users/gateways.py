@@ -2,8 +2,8 @@ from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from spytrend.users.exceptions import CreateUserError, UserAlreadyExistsError
-from spytrend.users.models import User
+from readtok.users.exceptions import CreateUserError, UserAlreadyExistsError
+from readtok.users.models import User
 
 
 class UserGateway:

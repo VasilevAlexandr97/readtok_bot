@@ -1,17 +1,15 @@
 import logging
 
-from sqlalchemy import ScalarResult, select
+from sqlalchemy import select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from readtok.books.exceptions import (
     BookAlreadyExistsError,
-    BookCategoryAlreadyExistsError,
-    BookCategoryCreationError,
     BookCreationError,
 )
-from readtok.books.models import Book, BookCategory, BookNote, BookEpisode
+from readtok.books.models import Book, BookCategory, BookEpisode, BookNote
 
 logger = logging.getLogger(__name__)
 

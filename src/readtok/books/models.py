@@ -1,6 +1,9 @@
 from uuid import UUID
 
-from sqlalchemy import UUID as SA_UUID, ForeignKey, String
+from sqlalchemy import (
+    UUID as SA_UUID,
+    ForeignKey,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from readtok.infra.db.base import Base

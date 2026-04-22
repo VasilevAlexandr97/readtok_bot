@@ -2,8 +2,8 @@ from abc import abstractmethod
 from typing import Protocol
 from uuid import UUID
 
-from spytrend.auth.exceptions import AuthError
-from spytrend.users.gateways import UserGateway
+from readtok.auth.exceptions import AuthError
+from readtok.users.gateways import UserGateway
 
 
 class IdProvider(Protocol):
@@ -31,7 +31,7 @@ class TelegramIdProvider(IdProvider):
         return user.id
 
 
-class WorkerIdProvider(IdProvider):
+class CliIdProvider(IdProvider):
     async def get_current_user_telegram_id(self) -> int:
         return 0
 
